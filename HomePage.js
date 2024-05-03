@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { DetailsList } from "./Details";
 import { useNavigate } from "react-router-dom";
+import logo from "./logu.png";
 
 
 function ToolBar(){
@@ -13,9 +14,9 @@ function ToolBar(){
       <div>
         <nav className="toolbar" >
           <ul className="toolbarItems">
-          <li><a style={{textDecoration:"none"}} href="#Home" onClick={()=>handleToolClick("Home")}>Home</a></li>
           <li><a style={{textDecoration:"none"}} href="#About" onClick={()=>handleToolClick("About")}>About</a></li>
-          <li><a style={{textDecoration:"none"}} href="#Functions" onClick={()=>handleToolClick("Functions")}>Functionalities</a></li>  
+          <li><a style={{textDecoration:"none"}} href="#Functions" onClick={()=>handleToolClick("Functions")}>Functions</a></li>  
+          <li><a style={{textDecoration:"none"}} href="#Home" onClick={()=>handleToolClick("Home")}>Future Work</a></li>
           </ul>
         </nav>
       </div>
@@ -82,23 +83,28 @@ function ToolBar(){
   export default function HomePage(){
 
     const navigate=useNavigate();
+    const detail=DetailsList[3];
   
     return(<>
       <div>
           <center>
           <FadeInOut>
           <section className="part1">
-            <button className="SignIn"><span className="SignInText" onClick={()=>navigate('/signUp')}>SIGN IN</span></button>
+            <button className="SignIn"><span className="SignInText" onClick={()=>navigate('/signUp')}>SIGN UP</span></button>
+              <span>
               <ToolBar />
+              <img className="Logo-Part" src={logo} alt="Here lies the logo"/></span>
+              <div className="CenterPart">
+                <h1>{detail.name}</h1>
+                <p>{detail.description}</p>
+              </div>
               <button className="CenterButton"><span className="ButtonText">Get Started</span></button>
           </section>
-          
           <section className="part2">
             <span className='info-boxes'>
               <Description />
               <AboutPart />
               <FunctionalitiesPart />
-              
             </span>
           </section>
           </FadeInOut>

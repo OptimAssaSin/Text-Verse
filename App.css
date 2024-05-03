@@ -1,8 +1,11 @@
 body{
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(18,14,24,0.9831582291119573) 58%, rgba(70,6,113,1) 100%);  display: flex;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(18,14,24,0.9831582291119573) 58%, rgba(70,6,113,1) 100%);
+  background-size: cover;
+
+  
   place-items: center;
   justify-content: center;
-  font-family: 'Roboto';
+  font-family: "google sans", sans-serif ;
 }
 
 
@@ -20,15 +23,32 @@ body{
   visibility: visible;
 }
 
-
-
-ul{
-  list-style: none;
+.Logo-Part{
+  height: 150px;
+  width: 150px;
+  margin-right: 950px;
+  margin-top: -90px;
 }
 
+.toolbar{
+  border-radius: 15px;
+  width:820px;
+  height: 50px;
+  margin-top:-64px;
+  margin-left: 10px;
+  background-color: transparent;
+  text-align: center;
+  z-index: 1 ;
+}
+
+
 ul li{
+  list-style: none;
   display: inline-block;
   margin:10px , 0;
+  padding: 10px;
+  margin-top: 9px;
+  
 }
 
 ul li a{
@@ -38,18 +58,21 @@ ul li a{
          0.3px -0.3px 0 #000,
         -0.3px -0.3px 0 #000;
   display:block;
+  padding: none;
   margin-top: -20px;
+  margin-right: 20px;
   padding:10px 25px;
   position: relative;
   text-decoration: none;
   font-weight: 500;
-  font-size: 30px;
-  text-transform: uppercase;
+  font-size: 28px;
+  position: relative;
   letter-spacing: 2px;
+  z-index: 1;
 }
 
- ul li a::before{
 
+ul li a::before{
   content:'';
   position: absolute;
   top:0;
@@ -63,13 +86,17 @@ ul li a{
               0 0 40px rgb(93, 52, 168),
               0 0 80px rgb(93, 52, 168),
               0 0 100px rgb(93, 52, 168);
+  border-radius: 20px;
   transition: 0.25s;
 }
 
+
+
 ul li a:hover::before{
-  color: #000;
+  z-index: -1 ;
   width:100%;
   transition: 0.25s;
+  
 }
 
 .scrolling{
@@ -79,9 +106,26 @@ ul li a:hover::before{
   background-color:grey;
 }
 
+
+.CenterPart{
+  color: white;
+  margin-top: 150px;
+  font-size: 32px;
+  width:700px;
+  height:fit-content;
+  text-align: center;
+}
+
+.CenterPart p{
+  font-size: 27px;
+}
+
+
+
+
 .Description{
   
-  margin-top: 550px;
+  margin-top: 250px;
   height: 100px;
   width:200px;
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(18,14,24,0.9831582291119573) 58%, rgba(70,6,113,1) 100%);  display: relative;
@@ -201,17 +245,16 @@ ul li a:hover::before{
 
 .CenterButton{
   font-size: 25px;
-  font-family: 'Roboto';
   text-transform: uppercase;
-  color: rgb(93, 52, 168);
+  color: black;
   font-weight: 500;
   border: none ;
-  margin-top:260px;
-  background-color: rgba(18,14,24,0.9831582291119573);
-  height: 100px;
+  margin-top:20px;
+  background-color: hsl(261, 53%, 43%);;
+  height: 90px;
   width:200px;
-  visibility: hidden;
-  font-family: 'Roboto';
+  border-radius: 30px;
+  font-weight: 100;
   cursor: pointer;
   position: relative;
   display: inline;
@@ -223,45 +266,39 @@ ul li a:hover::before{
 }
 
 .CenterButton:hover{
-  border-radius: 50%;
   background-color: rgb(93, 52, 168);
   color: black;
-  font-family: 'Roboto';
-  animation: glow 1s forwards;
-  transition:2s;
+  animation: glow 0.3s forwards;
+  transition:1s;
   visibility: visible;
 }
 
 
 .SignIn{
-  visibility: hidden;
+  border-radius: 20px;
   display: flex;
-  margin-top: 20px;
-  margin-left: 1100px;
+  margin-top: 30px;
+  margin-left: 1200px;
   font-size: 25px;
-  font-family: 'Roboto';
   text-transform: uppercase;
-  color: rgb(93, 52, 168);
+  color:black;
   font-weight: 500;
   border: none ;
-  background-color: black;
-  height: 100px;
-  width:200px;
+  background-color: rgb(93, 52, 168);
+  height: 50px;
+  width:150px;
+
   cursor: pointer;
   position: relative;
   display: inline;
-  -webkit-box-reflect: below 1px linear-gradient(transparent , #0005);
 }
 .SignInText{
   visibility: visible;
 }
 
 .SignIn:hover{
-  border-radius: 40%;
-  background-color: rgb(93, 52, 168);
-  color: black;
-  font-family: 'Roboto';
-  animation: glow 1s forwards;
+
+  animation: glow 0.1s forwards;
   transition:2s;
   visibility: visible;
 }
